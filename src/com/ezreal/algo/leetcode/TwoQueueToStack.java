@@ -1,4 +1,4 @@
-package com.ezreal.algo.struct;
+package com.ezreal.algo.leetcode;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -37,6 +37,32 @@ public class TwoQueueToStack<T> {
                 firstQueue.add(secondQueue.poll());
             }
             return secondQueue.poll();
+
         }
+    }
+
+    public T top(){
+        if (firstQueue.isEmpty() && secondQueue.isEmpty()){
+            return null;
+        }
+        if (!firstQueue.isEmpty()){
+            while (firstQueue.size() != 1){
+                secondQueue.add(firstQueue.poll());
+            }
+            T poll = firstQueue.poll();
+            secondQueue.add(poll);
+            return poll;
+        }else {
+            while (secondQueue.size() != 1){
+                firstQueue.add(secondQueue.poll());
+            }
+            T poll = secondQueue.poll();
+            firstQueue.add(poll);
+            return poll;
+        }
+    }
+
+    public boolean isEmpty(){
+        return firstQueue.isEmpty() && secondQueue.isEmpty();
     }
 }

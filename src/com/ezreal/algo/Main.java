@@ -2,10 +2,8 @@ package com.ezreal.algo;
 
 //import com.ezreal.algo.sort.QuickSort;
 
-import com.ezreal.algo.struct.ArrayStack;
-import com.ezreal.algo.struct.LinkStack;
-import com.ezreal.algo.struct.TwoQueueToStack;
-import com.ezreal.algo.struct.TwoStackToQueue;
+import com.ezreal.algo.leetcode.CheckBrackets;
+import com.ezreal.algo.struct.*;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -86,8 +84,8 @@ public class Main {
 //            System.out.println("can't solve");
 //        }
 
-//          // 队列，FIFO，不越界的情况下都是 1234567出来
-//        TwoStackToQueue<Integer> queue = new TwoStackToQueue<>();
+          // 队列，FIFO，不越界的情况下都是 1234567出来
+//        LinkQueue<Integer> queue = new LinkQueue<>();
 //
 //        queue.push(1);
 //        queue.push(2);
@@ -109,28 +107,31 @@ public class Main {
 //        System.out.println(queue.pop());
 //        System.out.println(queue.pop());
 
-          // 1234入，然后出栈，再入5，再出栈，再入67，然后依次出栈，结果应该是 4576321
-        LinkStack<Integer> stack = new LinkStack<>();
-        stack.push(1);
-        stack.push(2);
-        stack.push(3);
-        stack.push(4);
-
-        System.out.println(stack.pop());
-
-        stack.push(5);
-
-        System.out.println(stack.pop());
-
-        stack.push(6);
-        stack.push(7);
-
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-
+//          // 1234入，然后出栈，再入5，再出栈，再入67，然后依次出栈，结果应该是 4576321
+//        LinkStack<Integer> stack = new LinkStack<>();
+//        stack.push(1);
+//        stack.push(2);
+//        stack.push(3);
+//        stack.push(4);
+//
+//        System.out.println(stack.pop());
+//
+//        stack.push(5);
+//
+//        System.out.println(stack.pop());
+//
+//        stack.push(6);
+//        stack.push(7);
+//
+//        System.out.println(stack.pop());
+//        System.out.println(stack.pop());
+//        System.out.println(stack.pop());
+//        System.out.println(stack.pop());
+//        System.out.println(stack.pop());
+        System.out.println("() =  " +CheckBrackets.isValid("()"));
+        System.out.println("()[]{} =  " +CheckBrackets.isValid("()[]{}"));
+        System.out.println("([)] =  " +CheckBrackets.isValid("([)]"));
+        System.out.println("{[]} =  " +CheckBrackets.isValid("{[]}"));
     }
 
     private static int[] getRangeArray(){

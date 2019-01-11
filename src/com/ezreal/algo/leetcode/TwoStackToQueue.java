@@ -1,4 +1,4 @@
-package com.ezreal.algo.struct;
+package com.ezreal.algo.leetcode;
 
 import java.util.Stack;
 
@@ -30,5 +30,22 @@ public class TwoStackToQueue<T> {
             return outStack.pop();
         }
         return null;
+    }
+
+    public T top(){
+        if (!outStack.isEmpty()){
+            return outStack.peek();
+        }
+        if (!inStack.isEmpty()){
+            while (!inStack.isEmpty()){
+                outStack.push(inStack.pop());
+            }
+            return outStack.peek();
+        }
+        return null;
+    }
+
+    public boolean isEmpty(){
+        return inStack.isEmpty() && outStack.isEmpty();
     }
 }
