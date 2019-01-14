@@ -2,11 +2,8 @@ package com.ezreal.algo;
 
 //import com.ezreal.algo.sort.QuickSort;
 
-import com.ezreal.algo.leetcode.CheckBrackets;
-import com.ezreal.algo.struct.*;
+import com.ezreal.algo.search.FindKthLargestValue;
 
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Random;
 
 public class Main {
@@ -128,10 +125,14 @@ public class Main {
 //        System.out.println(stack.pop());
 //        System.out.println(stack.pop());
 //        System.out.println(stack.pop());
-        System.out.println("() =  " +CheckBrackets.isValid("()"));
-        System.out.println("()[]{} =  " +CheckBrackets.isValid("()[]{}"));
-        System.out.println("([)] =  " +CheckBrackets.isValid("([)]"));
-        System.out.println("{[]} =  " +CheckBrackets.isValid("{[]}"));
+
+//        System.out.println("() =  " +CheckBrackets.isValid("()"));
+//        System.out.println("()[]{} =  " +CheckBrackets.isValid("()[]{}"));
+//        System.out.println("([)] =  " +CheckBrackets.isValid("([)]"));
+//        System.out.println("{[]} =  " +CheckBrackets.isValid("{[]}"));
+
+        int value = FindKthLargestValue.findValue(new int[]{3,2,1,5,6,4}, 2);
+        System.out.println(value);
     }
 
     private static int[] getRangeArray(){
