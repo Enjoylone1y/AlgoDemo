@@ -67,4 +67,34 @@ public class BinarySearch {
         return -1;
     }
 
+    /**
+     * 变体3，找到所有的 target，返回其范围
+     */
+    public static int[] searchRange(int[] nums, int target) {
+        int left = -1;
+        int right = -1;
+
+        int low = 0;
+        int height = nums.length - 1;
+        while (low <= height){
+            int mid = low + (height - low) / 2;
+            if (nums[mid] > target){
+                height = mid - 1;
+            }else if (nums[mid] < target){
+                low = mid + 1;
+            }else {
+                left = right = mid;
+                while (left >= 0 && nums[left] == target){
+                    left--;
+                }
+                while(right < nums.length && nums[right] == target){
+                    right++;
+                }
+                ++left;
+                --right;
+                break;
+            }
+        }
+        return new int[]{left,right};
+    }
 }

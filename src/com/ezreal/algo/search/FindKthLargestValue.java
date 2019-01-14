@@ -1,7 +1,5 @@
 package com.ezreal.algo.search;
 
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * 在O(n) 时间内，找到数组中第 k 大的元素

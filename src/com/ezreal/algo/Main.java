@@ -2,6 +2,7 @@ package com.ezreal.algo;
 
 //import com.ezreal.algo.sort.QuickSort;
 
+import com.ezreal.algo.search.BinarySearch;
 import com.ezreal.algo.search.FindKthLargestValue;
 
 import java.util.Random;
@@ -131,8 +132,11 @@ public class Main {
 //        System.out.println("([)] =  " +CheckBrackets.isValid("([)]"));
 //        System.out.println("{[]} =  " +CheckBrackets.isValid("{[]}"));
 
-        int value = FindKthLargestValue.findValue(new int[]{3,2,1,5,6,4}, 2);
-        System.out.println(value);
+//        int value = FindKthLargestValue.findValue(new int[]{3,2,1,5,6,4}, 2);
+//        System.out.println(value);
+
+        int[] ints = BinarySearch.searchRange(new int[]{-1, 2, 3, 4, 6, 7, 8, 8, 8, 12, 34, 54}, 8);
+        System.out.println("s = " + ints[0] + ",e = " + ints[1]);
     }
 
     private static int[] getRangeArray(){
