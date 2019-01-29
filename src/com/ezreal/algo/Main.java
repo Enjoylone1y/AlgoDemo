@@ -4,7 +4,9 @@ package com.ezreal.algo;
 
 import com.ezreal.algo.search.BinarySearch;
 import com.ezreal.algo.search.FindKthLargestValue;
+import com.ezreal.algo.tree.BinaryTree;
 
+import java.util.LinkedHashMap;
 import java.util.Random;
 
 public class Main {
@@ -135,8 +137,14 @@ public class Main {
 //        int value = FindKthLargestValue.findValue(new int[]{3,2,1,5,6,4}, 2);
 //        System.out.println(value);
 
-        int[] ints = BinarySearch.searchRange(new int[]{-1, 2, 3, 4, 6, 7, 8, 8, 8, 12, 34, 54}, 8);
-        System.out.println("s = " + ints[0] + ",e = " + ints[1]);
+//
+//        int[] ints = BinarySearch.searchRange(new int[]{-1, 2, 3, 4, 6, 7, 8, 8, 8, 12, 34, 54}, 8);
+//        System.out.println("s = " + ints[0] + ",e = " + ints[1]);
+
+        BinaryTree binaryTree = new BinaryTree(new int[]{1,2,3,-1,4,5});
+        binaryTree.preOrderTraversal();
+        binaryTree.inOrderTraversal();
+        binaryTree.postOrderTraversal();
     }
 
     private static int[] getRangeArray(){
