@@ -2,12 +2,21 @@ package com.ezreal.algo;
 
 //import com.ezreal.algo.sort.QuickSort;
 
+import com.ezreal.algo.leetcode.LCommPrefix;
 import com.ezreal.algo.search.BinarySearch;
 import com.ezreal.algo.search.FindKthLargestValue;
+import com.ezreal.algo.search.RobotMoveCount;
+import com.ezreal.algo.search.StrInMatrix;
 import com.ezreal.algo.tree.BinaryTree;
+import sun.jvm.hotspot.utilities.BitMap;
 
-import java.util.LinkedHashMap;
-import java.util.Random;
+import java.io.IOException;
+import java.lang.ref.SoftReference;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.net.*;
+import java.util.*;
 
 public class Main {
 
@@ -141,10 +150,66 @@ public class Main {
 //        int[] ints = BinarySearch.searchRange(new int[]{-1, 2, 3, 4, 6, 7, 8, 8, 8, 12, 34, 54}, 8);
 //        System.out.println("s = " + ints[0] + ",e = " + ints[1]);
 
-        BinaryTree binaryTree = new BinaryTree(new int[]{1,2,3,-1,4,5});
-        binaryTree.preOrderTraversal();
-        binaryTree.inOrderTraversal();
-        binaryTree.postOrderTraversal();
+//        BinaryTree binaryTree = new BinaryTree(new int[]{1,2,3,-1,4,5});
+//        binaryTree.preOrderTraversal();
+//        binaryTree.inOrderTraversal();
+//        binaryTree.postOrderTraversal();
+//        LinkedHashMap<Integer,Integer> hashMap = new LinkedHashMap<>();
+//        Integer key = hashMap.keySet().iterator().next();
+//        hashMap.remove(key,hashMap.get(key));
+//
+//        String prefix = LCommPrefix.longestCommonPrefix(new String[]{"flower","floght","fl"});
+//        System.out.println(prefix);
+//
+//        double pow = Math.pow(2, 5);
+
+//        boolean hasPath = StrInMatrix.hasPath(new char[]{'a', 'b', 'c', 'e', 's', 'f', 'c', 's', 'a', 'd', 'e', 'e'},
+//                3, 4, "bcced".toCharArray());
+//        System.out.println(hasPath);
+
+        int count = RobotMoveCount.movingCount(5, 10, 10);
+        System.out.println(count);
+
+
+    }
+
+
+    public String replaceSpace(StringBuffer str) {
+        if(str == null){
+            return null;
+        }
+        for(int i=0;i<str.length();i++) {
+            if (str.charAt(i) == ' '){
+                str.replace(i,i+1,"%20");
+            }
+        }
+        return str.toString();
+
+
+    }
+
+    public class ListNode {
+        int val;
+        ListNode next = null;
+        ListNode(int val) {
+            this.val = val;
+        }
+    }
+
+    public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
+        if(listNode == null){
+            return null;
+        }
+        Stack<Integer> stack = new Stack<>();
+        while(listNode != null){
+            stack.push(listNode.val);
+            listNode = listNode.next;
+        }
+        ArrayList<Integer> result = new ArrayList<>(stack.size());
+        while(!stack.isEmpty()){
+            result.add(stack.pop());
+        }
+        return result;
     }
 
     private static int[] getRangeArray(){
