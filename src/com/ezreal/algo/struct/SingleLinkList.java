@@ -112,26 +112,21 @@ public class SingleLinkList<E> implements BaseLinkList<E> {
         }
 
         // 要进行反转，必须记住当前处理节点和其前后两个节点
-        Node<E> pre = first;
-        Node<E> current = first.next;
-        Node<E> next = null;
-        while (current.next != null){
-            // 保存下一个节点
-            next = current.next;
-            // 列表反转
-            current.next = pre;
-            // 向前推进
-            pre = current;
-            current = next;
-        }
-        // 把最后一个节点的next指向倒数第二个节点
-        current.next = pre;
-
-        // 尾节点变成头结点，头结点变成最后这个节点
+        // 尾就是当前的头
         last = first;
-        last.next = null;
-        first = current;
-
+        Node<E> pre = null;
+        Node<E> next = null;
+        while (first != null){
+            // 首先保存原本的next节点
+            next = first.next;
+            // 把当前节点的next调转方向
+            first.next = pre;
+            // 移动到下一位置
+            pre = first;
+            first = next;
+        }
+        // 头就是在pre的位置
+        first = pre;
         printAll();
     }
 

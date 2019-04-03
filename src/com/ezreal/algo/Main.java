@@ -2,20 +2,10 @@ package com.ezreal.algo;
 
 //import com.ezreal.algo.sort.QuickSort;
 
-import com.ezreal.algo.leetcode.LCommPrefix;
-import com.ezreal.algo.search.BinarySearch;
-import com.ezreal.algo.search.FindKthLargestValue;
-import com.ezreal.algo.search.RobotMoveCount;
-import com.ezreal.algo.search.StrInMatrix;
-import com.ezreal.algo.tree.BinaryTree;
-import sun.jvm.hotspot.utilities.BitMap;
+import com.ezreal.algo.leetcode.*;
+import com.ezreal.algo.struct.ListNode;
+import com.ezreal.algo.struct.SingleLinkList;
 
-import java.io.IOException;
-import java.lang.ref.SoftReference;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.net.*;
 import java.util.*;
 
 public class Main {
@@ -167,10 +157,48 @@ public class Main {
 //                3, 4, "bcced".toCharArray());
 //        System.out.println(hasPath);
 
-        int count = RobotMoveCount.movingCount(5, 10, 10);
-        System.out.println(count);
+//        int count = RobotMoveCount.movingCount(5, 10, 10);
+//        System.out.println(count);
 
+//        System.out.println(Math.pow(5,-10));
+//        System.out.println(Pow.Power(5,-10));
 
+//        new PrintMaxN().printMaxN(3);
+
+//          // 测试删除链表中的重复节点
+//        ListNode head = new ListNode(1);
+//        ListNode tail = new ListNode(2);
+//        head.next = tail;
+//        tail = tail.next = new ListNode(3);
+//        tail = tail.next = new ListNode(3);
+//        tail = tail.next = new ListNode(4);
+//        tail = tail.next = new ListNode(4);
+//        tail.next = new ListNode(5);
+//        printLinkedList(head);
+//        ListNode re = DeleteDuplication.deleteDuplication2(head);
+//        System.out.println("DeleteDuplication result = ");
+//        printLinkedList(re);
+
+        // 测试正则表达式
+//        boolean match1 = Regular.match("aaa".toCharArray(), "a.a".toCharArray()); // true
+//        boolean match2 = Regular.match("aaa".toCharArray(), "ab*ac*a".toCharArray()); // true
+//        boolean match3 = Regular.match("aaa".toCharArray(), "aa.a".toCharArray()); // false
+//        boolean match4 = Regular.match("aaa".toCharArray(), "ab*a".toCharArray()); //false
+//        boolean match5 = Regular.match("bcbbabab".toCharArray(), "a*a".toCharArray()); //false
+//        System.out.println(match1);
+//        System.out.println(match2);
+//        System.out.println(match3);
+//        System.out.println(match4);
+//        System.out.println(match5);
+
+        // "+100","5e2","3.1416"和"-1E-16" 都表示数值。
+        // "12e","1a3.14","1.2.3","+-5"和"12e+4.3" 都不是。
+//        boolean numeric1 = new StrIsNumeric().isNumeric("12e".toCharArray());
+//
+//        System.out.println(numeric1);
+
+        ArrayList<Integer> integers = FindNumbersWithSum.FindNumbersWithSum(new int[]{1, 2, 4, 7, 11, 15}, 15);
+        System.out.println(integers.toString());
     }
 
 
@@ -186,14 +214,6 @@ public class Main {
         return str.toString();
 
 
-    }
-
-    public class ListNode {
-        int val;
-        ListNode next = null;
-        ListNode(int val) {
-            this.val = val;
-        }
     }
 
     public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
@@ -229,6 +249,14 @@ public class Main {
             builder.append(array[i]).append(",");
         }
         System.out.println(builder.toString());
+        System.out.println();
+    }
+
+    private static void printLinkedList(ListNode head){
+        while (head != null){
+            System.out.print(head.val + ",");
+            head = head.next;
+        }
         System.out.println();
     }
 
