@@ -15,13 +15,13 @@ public class LCommPrefix {
             list.add(strs[0].charAt(i));
         }
 
-        // 从第3个字符串开始，通过比对调整最长公共前缀
+        // 从第2个字符串开始，通过比对调整最长公共前缀
         for (int j = 2; j < strs.length; j++) {
-            // 如果当前公共子串已经为空,获取当前字符为空，就直接返回了
+            // 如果当前公共子串已经为空,或者当前字符为空，就直接返回了
             if (list.isEmpty() || strs[j].equals("")) {
                 return "";
             }
-            // 如果字符串长度都比公共前缀短，那就先缩短最长子串
+            // 如果字符串长度都比公共前缀短，那就先缩短最长公共子串
             if (strs[j].length() < list.size()){
                 list = list.subList(0,strs[j].length());
             }

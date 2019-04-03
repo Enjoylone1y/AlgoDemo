@@ -1,4 +1,4 @@
-package com.ezreal.algo.search;
+package com.ezreal.algo.leetcode;
 
 public class RobotMoveCount {
     public static int movingCount(int threshold, int rows, int cols) {
